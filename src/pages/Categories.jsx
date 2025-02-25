@@ -20,15 +20,16 @@ const Categories = ({image,name}) => {
         <div className='w-[100%] h-[100%] inset-0 absolute z-[-1]'>
           <img className='w-[100%] h-[100%] object-cover' src={image}/>
         </div>
-        <div className='flex flex-col items-center'>
-          <div className='satisfy-regular text-white  text-[6vw]'>{name}</div>
-          <div className="w-[50vw]">
+        <div className='w-[100%] h-[100%] flex sm:flex-row flex-col items-center justify-center gap-8'>
+          <div className='satisfy-regular text-white text-center text-[3vw] w-[25vw]'>{name}</div>
+          <div className="sm:w-[50vw] w-[85vw]">
             <Slider {...settings}>
-           <div><img className=' h-[70vh] w-[50vw]' src={image1}/></div>
-           <div><img className=' h-[70vh] w-[50vw]' src={image1}/></div>
-           <div><img className=' h-[70vh] w-[50vw]' src={image1}/></div>
+           <div><img className=' sm:h-[70vh] h-[50vh] w-[100%]' src={image1}/></div>
+           <div><img className=' sm:h-[70vh] h-[50vh] w-[100%]' src={image1}/></div>
+           <div><img className=' sm:h-[70vh] h-[50vh] w-[100%]' src={image1}/></div>
             </Slider>
           </div>
+          <div className='sm:w-[25vw] w-[80vw] text-center satisfy-regular text-xl '>Freezing time, framing memories, capturing souls.</div>
         </div>
       </section>
     </div>
