@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
+
 //todo=pointer ke sath name of the page woill also go 
 
 const Categories = ({image,name}) => {
@@ -18,18 +19,20 @@ const Categories = ({image,name}) => {
     <div className={` h-[100%] w-[100%]`}>
       <section className='h-[100%] w-[100%] overflow-hidden relative'>
         <div className='w-[100%] h-[100%] inset-0 absolute z-[-1]'>
-          <img className='w-[100%] h-[100%] object-cover' src={image}/>
+          <video className='h-[100%] w-[100%] object-cover' autoPlay muted>
+            <source src={image} type="video/mp4"/>
+          </video>
         </div>
         <div className='w-[100%] h-[100%] flex sm:flex-row flex-col items-center justify-center gap-8'>
-          <div className='satisfy-regular text-white text-center text-[3vw] w-[25vw]'>{name}</div>
-          <div className="sm:w-[50vw] w-[85vw]">
+          <div className='satisfy-regular text-white text-center sm:text-[3vw] text-[8vw] w-[25vw]'>{name}</div>
+          <div className="sm:w-[40vw] w-[85vw] ">
             <Slider {...settings}>
-           <div><img className=' sm:h-[70vh] h-[50vh] w-[100%]' src={image1}/></div>
-           <div><img className=' sm:h-[70vh] h-[50vh] w-[100%]' src={image1}/></div>
-           <div><img className=' sm:h-[70vh] h-[50vh] w-[100%]' src={image1}/></div>
+           <div><img className=' sm:h-[60vh] h-[50vh] w-[100%] ' src={image1}/></div>
+           <div><img className=' sm:h-[60vh] h-[50vh] w-[100%] ' src={image1}/></div>
+           <div><img className=' sm:h-[60vh] h-[50vh] w-[100%] ' src={image1}/></div>
             </Slider>
           </div>
-          <div className='sm:w-[25vw] w-[80vw] text-center satisfy-regular text-xl '>Freezing time, framing memories, capturing souls.</div>
+          <div className='sm:w-[25vw] w-[80vw] text-center satisfy-regular sm:text-xl text-[5vw]'>Freezing time, framing memories, capturing souls.</div>
         </div>
       </section>
     </div>

@@ -1,13 +1,15 @@
 import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import photographer from "../src/assets/photographer.png";
-import aeroplane from "../src/assets/aeroplane.png";
-import Fashion from "../src/assets/Fashion/image2.jpg"
-import Media from "../src/assets/Media/image1.jpg"
-import Product from "../src/assets/Product/image1.jpg"
-import Weeding from "../src/assets/wedding/image3.jpg"
-import homeimage from "../src/assets/homeimage.jpg"
+import instagram from "../src/assets/icons/instagram.png";
+import twitter from "../src/assets/icons/twitter.png";
+import whatsapp from "../src/assets/icons/whatsapp.png";
+import Fashion from "../src/assets/videos/fashion.mp4";
+import Media from "../src/assets/videos/concert.mp4";
+import Product from "../src/assets/videos/product.mp4";
+import Weeding from "../src/assets/videos/wedding.mp4";
+import homeimage from "../src/assets/travel/image3.jpg";
+import admin from "../src/assets/admin.png";
 import "./App.css";
 import Categories from "./pages/Categories";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -22,22 +24,21 @@ function App() {
   const thirdPin = useRef(null);
   const fourthPin = useRef(null);
   const footer = useRef(null);
-  const capturing=useRef(null);
-  const whole=useRef(null)
-  const world=useRef(null)
+  const capturing = useRef(null);
+  const whole = useRef(null);
+  const world = useRef(null);
 
   const pinnedSections = [firstPin, secondPin, thirdPin, fourthPin, lastCard];
   useGSAP(() => {
     pinnedSections.forEach((section, index, sections) => {
       let img = section.current.querySelector(".img");
-     
+
       // let nextSection = sections[index + 1] || lastCard;
       // let endScalePoint = `top+=${
       //   nextSection.current.offsetTop - section.current.offsetTop
       // } top`;
       let endValue = footer.current.offsetTop - window.innerHeight;
       gsap.to(section.current, {
-     
         scrollTrigger: {
           trigger: section.current,
           start: "top top",
@@ -45,12 +46,11 @@ function App() {
           pin: true,
           pinSpacing: false,
           scrub: 1,
-          
         },
       });
       gsap.fromTo(
         img,
-        { scale:0.5 },
+        { scale: 0.5 },
         {
           scale: 1,
           ease: "none",
@@ -59,42 +59,57 @@ function App() {
             start: "top bottom",
             end: "top top",
             scrub: 1,
-          
-           
           },
         }
       );
-      gsap.from(capturing.current, {
-        
-      })
-
+      gsap.fromTo(
+        [whole.current, capturing.current, world.current],
+        {
+          scale: 0,
+        },
+        {
+          scale: 1,
+          duration: 1,
+          delay: 1,
+        }
+      );
     });
-
   });
 
   return (
     <>
       <div className=" h-20 w-[80%]  z-50 fixed left-[10%]">
-      <Navbar />
+        <Navbar />
       </div>
       <div className="w-[100%] h-[100%] overflow-hidden">
         <div className="absolute top-[85%] left-[50%] translate-x-[-50%] text-xl font-light z-[2]">
-          <a className="dm-serif-text-regular-italic">Turning Moments Into Magic</a>
+          <a className="dm-serif-text-regular-italic">
+            Turning Moments Into Magic
+          </a>
         </div>
-        
-        <section  ref={firstPin} className=" h-[100vh] w-[100vw] ">
+
+        <section ref={firstPin} className=" h-[100vh] w-[100vw] ">
           <div className="w-[100%] h-[100%] absolute overflow-hidden">
-            <img className="h-[100%] w-[100%] object-cover" src={homeimage}/>
+            <img className="h-[100%] w-[100%] object-cover" src={homeimage} />
           </div>
-          
-          <h1 ref={capturing} className="young-serif-regular sm:text-[140px] tracking-tighter text-[70px]  w-[100%] absolute sm:top-[28%] top-[30%] sm:left-0  sm:translate-x-[-20%] text-center  translate-y-[-50%]  leading-[100%] ">
-            Capturing 
+
+          <h1
+            ref={capturing}
+            className="bebas-neue-regular sm:text-[110px]  text-[70px]  w-[100%] absolute sm:top-[40%] top-[30%] sm:left-0  sm:translate-x-[-25%] text-center  translate-y-[-50%]  leading-[100%] "
+          >
+            Capturing
           </h1>
-          <h1 ref={whole} className="young-serif-regular sm:text-[140px] tracking-tighter text-[70px]  w-[100%] absolute sm:top-[55%] top-[40%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center leading-[100%] ">
-            Whole 
+          <h1
+            ref={whole}
+            className="bebas-neue-regular sm:text-[110px]  text-[70px]  w-[100%] absolute sm:top-[55%] top-[40%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-center leading-[100%] "
+          >
+            Whole
           </h1>
-          <h1 ref={world} className="young-serif-regular sm:text-[140px] tracking-tighter text-[70px]  w-[100%] absolute sm:top-[75%] top-[50%] sm:left-[80%]  sm:translate-x-[-50%] translate-y-[-50%] text-center leading-[100%] ">
-            World 
+          <h1
+            ref={world}
+            className="bebas-neue-regular sm:text-[110px]  text-[70px]  w-[100%] absolute sm:top-[70%] top-[50%] sm:left-[70%]  sm:translate-x-[-50%] translate-y-[-50%] text-center leading-[100%] "
+          >
+            World
           </h1>
         </section>
         <section ref={secondPin} className="h-[100vh] w-[100vw]">
@@ -109,7 +124,7 @@ function App() {
         </section>
         <section ref={fourthPin} className="h-[100vh] w-[100vw]">
           <div className="img absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[100%] h-[100%]">
-            <Categories image={Media}  name="Media"/>
+            <Categories image={Media} name="Media" />
           </div>
         </section>
         <section ref={lastCard} className="h-[100vh] w-[100vw] relative">
@@ -119,9 +134,38 @@ function App() {
         </section>
         <section
           ref={footer}
-          className=" w-[100%] h-[100vh] flex justify-center items-center"
+          className=" w-[100%] h-[100vh] flex flex-col  gap-[50px] items-center justify-center bg-gradient-to-r from-blue-600 to-sky-300"
         >
-          <h1 className="text-[48px] font-[400] ">Footer</h1>
+          <div className="flex flex-col sm:flex-row justify-between gap-5 sm:gap-0 w-[90%]">
+            {/* social media section */}
+            <div className="flex flex-col items-center justify-center young-serif-regular">
+              <h1 className="text-3xl font-bold">Stay in touch</h1>
+              <h2 className="text-xl font-semibold">Contact</h2>
+              <h3>
+                contact@theconcertmedia.com <br />
+                +91 7900090030 +91 8126619172
+              </h3>
+            </div>
+
+            {/* profile */}
+            <div className="flex flex-col items-center">
+              <img
+                className="sm:w-[25vw] sm:h-[50vh] w-[60vw] h-[40vh]"
+                src={admin}
+              />
+              <h1 className="text-center text-xl font-semibold young-serif-regular">
+                Prashant Mishra
+              </h1>
+            </div>
+            <div className="flex flex-row sm:flex-col justify-center gap-3">
+              <img className="h-[70px] w-[70px]" src={whatsapp} />
+              <img className="h-[70px] w-[70px]" src={instagram} />
+              <img className="h-[70px] w-[70px]" src={twitter} />
+            </div>
+          </div>
+          <div className="w-[90%] border-t-[1px]">
+            <h1 className="text-center">Made by Naman</h1>
+          </div>
         </section>
       </div>
     </>
