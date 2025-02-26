@@ -15,14 +15,14 @@ const Navbar = () => {
   return (
     <div className=' h-full w-full flex justify-between items-center '>
       <div className=' text-white '>
-      <BsCamera2 className='h-[40px] w-[40px]'/>
+      <BsCamera2 className='h-[40px] w-[40px] '/>
       </div>
       <div className='hidden sm:flex gap-3'>
         <div className='cormorant-garamond-light text-2xl text-white font-semibold hover:bg-slate-400 rounded-full p-[5px]'>Portfolio</div>
         <div className='cormorant-garamond-light text-2xl text-white font-semibold'>Contact</div>
         <div className='cormorant-garamond-light text-2xl text-white font-semibold'>About</div>
       </div>
-      <div className='sm:hidden text-slate-600'>
+      <div className='sm:hidden text-white '>
       <GiHamburgerMenu onClick={handleOnClickEntry}/>
       {
         isOpen && <div className='w-[100vw] h-[100vh] left-[-10vw] top-0  absolute backdrop-blur-md z-[110]'>

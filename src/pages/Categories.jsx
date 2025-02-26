@@ -30,9 +30,9 @@ const Categories = ({image,name,color}) => {
           <div style={style} className='cormorant-garamond-light font-bold  text-center sm:text-[4vw] text-[8vw] w-[25vw]'>{name}</div>
           <div className="sm:w-[40vw] w-[85vw] ">
             <Slider {...settings}>
-           <div><img className=' sm:h-[60vh] h-[50vh] w-[100%] ' src={image1}/></div>
-           <div><img className=' sm:h-[60vh] h-[50vh] w-[100%] ' src={image1}/></div>
-           <div><img className=' sm:h-[60vh] h-[50vh] w-[100%] ' src={image1}/></div>
+           <div><img className='max-sm:rounded-4xl sm:h-[60vh] h-[50vh] w-[100%] ' src={image1}/></div>
+           <div><img className='max-sm:rounded-4xl sm:h-[60vh] h-[50vh] w-[100%] ' src={image1}/></div>
+           <div><img className='max-sm:rounded-4xl sm:h-[60vh] h-[50vh] w-[100%] ' src={image1}/></div>
             </Slider>
           </div>
           <div style={style} className='sm:w-[25vw] w-[80vw] text-center cormorant-garamond-light font-medium sm:text-2xl text-[5vw]'>Freezing time, framing memories, capturing souls.</div>

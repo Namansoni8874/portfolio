@@ -139,7 +139,7 @@ function App() {
           ref={footer}
           className=" w-[100%] h-[100vh] flex flex-col  gap-[50px] items-center justify-center bg-gradient-to-r from-blue-600 to-sky-300"
         >
-          <div className="flex flex-col sm:flex-row  gap-[100px] justify-center  w-[90%]">
+          <div className="flex flex-col sm:flex-row  gap-[50px] justify-center  w-[90%]">
             {/* social media section */}
             <div className="flex flex-col items-center justify-center cormorant-garamond-light  ">
               <h1 className="text-3xl font-bold">Stay in touch</h1>
@@ -153,7 +153,7 @@ function App() {
             {/* profile */}
             <div className="flex flex-col items-center">
               <img
-                className="sm:w-[22vw] sm:h-[50vh] w-[60vw] h-[40vh]"
+                className="sm:w-[22vw] sm:h-[50vh] w-[80vw] h-[40vh]"
                 src={admin}
               />
               <h1 className="text-center text-xl font-semibold cormorant-garamond-light">
