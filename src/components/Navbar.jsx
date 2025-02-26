@@ -18,9 +18,9 @@ const Navbar = () => {
       <BsCamera2 className='h-[40px] w-[40px]'/>
       </div>
       <div className='hidden sm:flex gap-3'>
-        <div className='young-serif-regular text-xl text-white font-light'>Portfolio</div>
-        <div className='young-serif-regular text-xl text-white font-light'>Contact</div>
-        <div className='young-serif-regular text-xl text-white font-light'>About</div>
+        <div className='cormorant-garamond-light text-2xl text-white font-semibold hover:bg-slate-400 rounded-full p-[5px]'>Portfolio</div>
+        <div className='cormorant-garamond-light text-2xl text-white font-semibold'>Contact</div>
+        <div className='cormorant-garamond-light text-2xl text-white font-semibold'>About</div>
       </div>
       <div className='sm:hidden text-slate-600'>
       <GiHamburgerMenu onClick={handleOnClickEntry}/>
